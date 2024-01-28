@@ -5,6 +5,26 @@
 	grid-auto-rows: 1fr;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr;
-	gap: 15px 15px;
-	grid-template-areas: ". . .";
+	gap: 1rem 1rem;
+	grid-template-areas: ". . . .";
+}
+
+/* Responsive Grid */
+@media only screen and (max-width: 1000px) {
+	.productsList {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas: ". . .";
+	}
+}
+@media only screen and (max-width: 700px) {
+	.productsList {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: ". .";
+	}
+}
+@media only screen and (max-width: 500px) {
+	.productsList {
+		grid-template-columns: 1fr;
+		grid-template-areas: ".";
+	}
 }
