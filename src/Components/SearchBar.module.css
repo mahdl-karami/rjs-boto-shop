@@ -25,3 +25,10 @@
         opacity: 85%;
     }
 }
+
+/* Responsive Search Input */
+@media only screen and (max-width: 500px) {
+	.form input {
+		width: 200px;
+	}
+}
