@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import SearchBar from "../Components/SearchBar";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { FETCH_PRODUCTS } from "../Features/Products/ProductsSlice";
 
 const Products = () => {

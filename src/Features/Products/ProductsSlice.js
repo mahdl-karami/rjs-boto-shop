@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { API } from "../../Services/API_Config";
 
 const initialState = {
 	isLoading: false,
@@ -6,8 +7,8 @@ const initialState = {
 	error: "",
 };
 
-const FETCH_PRODUCTS = createAsyncThunk("Products/FETCH_PRODUCTS", () => {
-	return fetch("https://fakestoreapi.com/products").then((res) => res.json());
+const FETCH_PRODUCTS = createAsyncThunk("Products/FETCH_PRODUCTS", async () => {
+	return await API.get("/products");
 });
 
 export const ProductsSlice = createSlice({
