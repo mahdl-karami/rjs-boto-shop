@@ -32,3 +32,10 @@ body {
 	width: 95%;
 	margin: auto;
 }
+
+a {
+	color: var(--mainText);
+	&:hover {
+		opacity: 80%;
+	}
+}

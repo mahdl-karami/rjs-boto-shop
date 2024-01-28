@@ -17,9 +17,13 @@
 	border-radius: 10px;
 	padding: 0.5rem;
 	cursor: pointer;
-	transition: all 0.3s linear;
+	transition: opacity 0.3s linear;
 
 	&:hover {
 		opacity: 80%;
 	}
+}
+.box a {
+	transition: opacity 0.3s linear;
+	color: #fff;
 }
