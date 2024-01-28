@@ -1,0 +1,27 @@
+.form {
+	display: flex;
+	align-items: center;
+}
+.form input {
+	background: #fff;
+	border: dashed 3px var(--primary);
+    font-size: 1.3rem;
+    padding: .5rem .8rem;
+    border-radius: 10px;
+    outline: none;
+}
+.form button{
+    background: var(--primary);
+    border: 3px solid var(--primary);
+    padding: .6rem .8rem;
+    border-radius: 10px;
+    margin-left: .4rem;
+    font-size: 1.3rem;
+    color: #fff;
+    display: flex;
+    cursor: pointer;
+    transition: opacity .3s linear;
+    &:hover{
+        opacity: 85%;
+    }
+}

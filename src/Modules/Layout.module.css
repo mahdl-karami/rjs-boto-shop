@@ -20,7 +20,7 @@
 	transition: opacity 0.3s linear;
 
 	&:hover {
-		opacity: 80%;
+		opacity: 95%;
 	}
 }
 .box a {
