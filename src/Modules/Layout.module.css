@@ -1,0 +1,25 @@
+.box {
+	background: var(--primary);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 10px;
+	padding: 0.5rem 1rem;
+	margin: 1rem 0;
+	color: #fff;
+}
+.box button {
+	display: flex;
+	color: var(--primary);
+	font-size: 1.7rem;
+	background: #fff;
+	border: none;
+	border-radius: 10px;
+	padding: 0.5rem;
+	cursor: pointer;
+	transition: all 0.3s linear;
+
+	&:hover {
+		opacity: 80%;
+	}
+}

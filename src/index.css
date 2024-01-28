@@ -1,7 +1,7 @@
 :root {
 	/* main variables */
 	--mainText: #575757;
-	--mainBg: #f5f5f5;
+	--mainBg: #ffffff;
 	--primary: #2196f3;
 
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -25,4 +25,10 @@
 * {
 	margin: 0;
 	padding: 0;
+}
+
+body {
+	max-width: 1200px;
+	width: 95%;
+	margin: auto;
 }
