@@ -1,0 +1,19 @@
+.card{
+    background: var(--mainWhite);
+    border-radius: 10px;
+    border: dashed #ccc 2px;
+    padding: 1rem .9rem;
+}
+.card img{
+    width: 8rem;
+    height: 8rem;
+    margin: 1.5rem 0 1rem;
+}
+.card h5{
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+.card p{
+    font-size: .8rem;
+    font-weight: bold;
+}

@@ -6,13 +6,13 @@
 	border-radius: 10px;
 	padding: 0.5rem 1rem;
 	margin: 1rem 0;
-	color: #fff;
+	color: var(--mainWhite);
 }
 .box button {
 	display: flex;
 	color: var(--primary);
 	font-size: 1.7rem;
-	background: #fff;
+	background: var(--mainWhite);
 	border: none;
 	border-radius: 10px;
 	padding: 0.5rem;
@@ -25,7 +25,7 @@
 }
 .box a {
 	transition: opacity 0.3s linear;
-	color: #fff;
+	color: var(--mainWhite);
 }
 .box h2 a{
     text-decoration: underline;

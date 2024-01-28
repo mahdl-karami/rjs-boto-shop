@@ -1,17 +1,27 @@
 import { useEffect, useState } from "react";
 import SearchBar from "../Components/SearchBar";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { FETCH_PRODUCTS } from "../Features/Products/ProductsSlice";
-
+import ProductCard from "../Components/ProductCard";
+import styles from "./Products.module.css";
 const Products = () => {
 	const [search, setSearch] = useState("");
 	const dispatch = useDispatch();
+	const state = useSelector((state) => state.Products);
 	useEffect(() => {
-		dispatch(FETCH_PRODUCTS());
+		if (!state.products.length) {
+			dispatch(FETCH_PRODUCTS());
+		}
 	}, []);
 	return (
 		<div>
 			<SearchBar search={search} setSearch={setSearch} />
+			<div className={styles.productsList}>
+				{state.isLoading && <h1>Loading ...</h1>}
+				{state.products.map((product, i) => (
+					<ProductCard key={i} product={product} />
+				))}
+			</div>
 		</div>
 	);
 };

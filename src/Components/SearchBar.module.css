@@ -3,7 +3,7 @@
 	align-items: center;
 }
 .form input {
-	background: #fff;
+	background: var(--mainWhite);
 	border: dashed 3px var(--primary);
     font-size: 1.3rem;
     padding: .5rem .8rem;
@@ -17,7 +17,7 @@
     border-radius: 10px;
     margin-left: .4rem;
     font-size: 1.3rem;
-    color: #fff;
+    color: var(--mainWhite);
     display: flex;
     cursor: pointer;
     transition: opacity .3s linear;

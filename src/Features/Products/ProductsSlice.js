@@ -7,8 +7,8 @@ const initialState = {
 	error: "",
 };
 
-const FETCH_PRODUCTS = createAsyncThunk("Products/FETCH_PRODUCTS", async () => {
-	return await API.get("/products");
+const FETCH_PRODUCTS = createAsyncThunk("Products/FETCH_PRODUCTS", () => {
+	return API.get("/products");
 });
 
 export const ProductsSlice = createSlice({
