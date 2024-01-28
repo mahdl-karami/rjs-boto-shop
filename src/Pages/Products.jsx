@@ -1,12 +1,13 @@
-import React from 'react'
-import SearchBar from '../Components/SearchBar'
+import { useState } from "react";
+import SearchBar from "../Components/SearchBar";
 
 const Products = () => {
-  return (
-    <div>
-        <SearchBar />
-    </div>
-  )
-}
+	const [search, setSearch] = useState("");
+	return (
+		<div>
+			<SearchBar search={search} setSearch={setSearch}/>
+		</div>
+	);
+};
 
-export default Products
+export default Products;
