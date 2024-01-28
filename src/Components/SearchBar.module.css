@@ -1,32 +1,38 @@
 .form {
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 }
 .form input {
 	background: var(--mainWhite);
 	border: dashed 3px var(--primary);
-    font-size: 1.3rem;
-    padding: .5rem .8rem;
-    border-radius: 10px;
-    outline: none;
+	font-size: 1.3rem;
+	padding: 0.5rem 0.8rem;
+	border-radius: 10px;
+	outline: none;
+	margin: 0 0.4rem;
 }
-.form button{
-    background: var(--primary);
-    border: 3px solid var(--primary);
-    padding: .6rem .8rem;
-    border-radius: 10px;
-    margin-left: .4rem;
-    font-size: 1.3rem;
-    color: var(--mainWhite);
-    display: flex;
-    cursor: pointer;
-    transition: opacity .3s linear;
-    &:hover{
-        opacity: 85%;
-    }
+.form button {
+	background: var(--primary);
+	border: 3px solid var(--primary);
+	padding: 0.6rem 0.8rem;
+	border-radius: 10px;
+	font-size: 1.3rem;
+	color: var(--mainWhite);
+	display: flex;
+	cursor: pointer;
+	transition: opacity 0.3s linear;
+	&:hover {
+		opacity: 85%;
+	}
 }
 
 /* Responsive Search Input */
+@media only screen and (max-width: 650px) {
+	.form input {
+		margin: 0 .4rem 0 0;
+	}
+}
 @media only screen and (max-width: 500px) {
 	.form input {
 		width: 200px;

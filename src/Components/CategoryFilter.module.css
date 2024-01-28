@@ -1,0 +1,24 @@
+.category{
+    background: var(--primary);
+    border: 3px solid var(--primary);
+    padding: .5rem .8rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    color: var(--mainWhite);
+    display: flex;
+    cursor: pointer;
+    transition: opacity .3s linear;
+    outline: none;
+    text-transform: capitalize;
+    &:hover{
+        opacity: 85%;
+    }
+}
+
+/* Responsive Select Input */
+@media only screen and (max-width: 650px) {
+	.category {
+		width: 100%;
+        margin-bottom: 1rem;
+	}
+}
