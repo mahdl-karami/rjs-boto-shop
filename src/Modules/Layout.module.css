@@ -27,3 +27,6 @@
 	transition: opacity 0.3s linear;
 	color: #fff;
 }
+.box h2 a{
+    text-decoration: underline;
+}
