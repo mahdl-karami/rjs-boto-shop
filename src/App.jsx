@@ -1,6 +1,3 @@
-import Footer from "./Modules/Footer";
-import Header from "./Modules/Header";
-
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./Pages/Layout";
 import Products from "./Pages/Products";
