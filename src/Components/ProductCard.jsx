@@ -1,6 +1,8 @@
+// ! Import Modules
 import { ShortThis } from "../Helpers/TextShorter";
 import styles from "./ProductCard.module.css";
-const ProductCard = ({ product: { image, title, price, category } }) => {
+
+const ProductCard = ({ product: { image, title, price } }) => {
 	return (
 		<div className={styles.card}>
 			<div style={{ textAlign: "center" }}>

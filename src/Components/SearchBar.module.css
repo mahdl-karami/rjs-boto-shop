@@ -30,7 +30,7 @@
 /* Responsive Search Input */
 @media only screen and (max-width: 650px) {
 	.form input {
-		margin: 0 .4rem 0 0;
+		margin: 0 0.4rem 0 0;
 	}
 }
 @media only screen and (max-width: 500px) {

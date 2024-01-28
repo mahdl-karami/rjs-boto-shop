@@ -18,7 +18,6 @@
 	padding: 0.5rem;
 	cursor: pointer;
 	transition: opacity 0.3s linear;
-
 	&:hover {
 		opacity: 95%;
 	}
@@ -27,6 +26,6 @@
 	transition: opacity 0.3s linear;
 	color: var(--mainWhite);
 }
-.box h2 a{
-    text-decoration: underline;
+.box h2 a {
+	text-decoration: underline;
 }

@@ -1,6 +1,8 @@
+// ! Import Modules
 import styles from "./Layout.module.css";
 import { FaOpencart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 const Header = () => {
 	return (
 		<header className={styles.box}>

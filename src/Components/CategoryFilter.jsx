@@ -1,4 +1,6 @@
-import styles from './CategoryFilter.module.css'
+// ! Import Modules
+import styles from "./CategoryFilter.module.css";
+
 const CategoryFilter = ({ category, setCategory }) => {
 	const categories = [`all`, `men's clothing`, `jewelery`, `electronics`, `women's clothing`];
 	return (
