@@ -3,10 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 // ! Import Icons
 import { FiPlus, FiMinus, FiTrash2 } from "react-icons/fi";
 import { MdAddShoppingCart } from "react-icons/md";
-import { TbListDetails } from "react-icons/tb";
 // ! Import Modules
 import styles from "./ProductPanel.module.css";
-import { Link } from "react-router-dom";
 // ! Import Reducer Actions
 import { ADD_ITEM, INCERASE_ITEM, DECREASE_ITEM, DELET_ITEM } from "../Features/Cart/CartSlice";
 import { useState } from "react";
@@ -18,35 +16,27 @@ const ProductPanel = ({ product: { id } }) => {
 	// console.log(state)
 	return (
 		<div className={styles.panel}>
-			<Link to={`/products/${id}`} className={styles.detailes}>
-				<button>
-					<TbListDetails />
+			{!count ? (
+				<button onClick={() => setCount(1)}>
+					<MdAddShoppingCart />
 				</button>
-			</Link>
-
-			<div>
-				{!count ? (
-					<button onClick={() => setCount(1)}>
-						<MdAddShoppingCart />
-					</button>
-				) : (
-					<>
-						{count == 1 ? (
-							<button onClick={() => setCount(0)}>
-								<FiTrash2 />
-							</button>
-						) : (
-							<button onClick={() => setCount((c) => c - 1)}>
-								<FiMinus />
-							</button>
-						)}
-						<p>{count}</p>
-						<button onClick={() => setCount((c) => c + 1)}>
-							<FiPlus />
+			) : (
+				<>
+					{count == 1 ? (
+						<button onClick={() => setCount(0)}>
+							<FiTrash2 />
 						</button>
-					</>
-				)}
-			</div>
+					) : (
+						<button onClick={() => setCount((c) => c - 1)}>
+							<FiMinus />
+						</button>
+					)}
+					<p>{count}</p>
+					<button onClick={() => setCount((c) => c + 1)}>
+						<FiPlus />
+					</button>
+				</>
+			)}
 		</div>
 	);
 };

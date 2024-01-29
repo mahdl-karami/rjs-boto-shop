@@ -20,3 +20,7 @@
 	font-size: 0.8rem;
 	font-weight: bold;
 }
+.detailes button {
+	background: transparent;
+	color: var(--primary);
+}
