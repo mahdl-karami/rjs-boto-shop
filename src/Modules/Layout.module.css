@@ -9,6 +9,7 @@
 	color: var(--mainWhite);
 }
 .box button {
+	position: relative;
 	display: flex;
 	color: var(--primary);
 	font-size: 1.7rem;
@@ -28,4 +29,15 @@
 }
 .box h2 a {
 	text-decoration: underline;
+}
+.quantity {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: -7px;
+	right: -10px;
+	background-color: var(--mainWhite);;
+	border: var(--primary) 1px solid;
+	border-radius: 50%;
+	font-size: 1rem;
 }
