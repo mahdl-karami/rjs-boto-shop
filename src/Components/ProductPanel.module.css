@@ -1,0 +1,21 @@
+.panel {
+	display: flex;
+	justify-content: space-between;
+}
+.panel button {
+	border: none;
+	background: var(--primary);
+	color: var(--mainWhite);
+	padding: 0.2rem 0.4rem;
+	border-radius: 3px;
+	font-size: 1.2rem;
+	cursor: pointer;
+	transition: opacity 0.3s linear;
+	&:hover {
+		opacity: 75%;
+	}
+}
+.detailes button {
+	background: transparent;
+	color: var(--primary);
+}

@@ -3,6 +3,9 @@
 	border-radius: 10px;
 	border: dashed #ccc 2px;
 	padding: 1rem 0.9rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 .card img {
 	width: 100px;
