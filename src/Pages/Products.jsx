@@ -20,10 +20,10 @@ const Products = () => {
 	const dispatch = useDispatch();
 	const state = useSelector((state) => state.Products);
 	// ! Set States
-	const [search, setSearch] = useState("");
-	const [category, setCategory] = useState("all");
-	const [visibleProducts, setVisibleProducts] = useState(state.products);
 	const [searchParams, setSearchParams] = useSearchParams();
+	const [search, setSearch] = useState(getSearchParams(searchParams, "search"));
+	const [category, setCategory] = useState(getSearchParams(searchParams, "category"));
+	const [visibleProducts, setVisibleProducts] = useState(state.products);
 	// ! Fetch Data By Axios > Storea (Side Effect)
 	useEffect(() => {
 		if (!state.products.length) {
