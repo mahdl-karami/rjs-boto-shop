@@ -8,9 +8,6 @@ const SearchBar = ({ search, setSearch, children }) => {
 		<form className={styles.form}>
 			{children} {/* //! Category Select Place */}
 			<input type="text" name="search" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
-			<button type="submit">
-				<FaSearch />
-			</button>
 		</form>
 	);
 };
