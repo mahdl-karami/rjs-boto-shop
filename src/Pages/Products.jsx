@@ -9,20 +9,26 @@ import CategoryFilter from "../Components/CategoryFilter";
 import { FETCH_PRODUCTS } from "../Features/Products/ProductsSlice";
 // ! Import Modules
 import styles from "./Products.module.css";
+import { filterProducts } from "../Helpers/FilterProducts";
 
 const Products = () => {
-	// ! Set States
-	const [search, setSearch] = useState("");
-	const [category, setCategory] = useState("all");
 	// ! Redux Things
 	const dispatch = useDispatch();
 	const state = useSelector((state) => state.Products);
+	// ! Set States
+	const [search, setSearch] = useState("");
+	const [category, setCategory] = useState("all");
+	const [visibleProducts, setVisibleProducts] = useState(state.products);
 	// ! Fetch Data By Axios > Storea (Side Effect)
 	useEffect(() => {
 		if (!state.products.length) {
 			dispatch(FETCH_PRODUCTS());
 		}
 	}, []);
+	// ! Filter Products When Category Changed :
+	useEffect(() => {
+		setVisibleProducts(filterProducts(state, search, category));
+	}, [category , state.products , search]);
 	return (
 		<div>
 			<SearchBar search={search} setSearch={setSearch}>
@@ -32,7 +38,7 @@ const Products = () => {
 				{/* // ! Loading Spinner */}
 				{state.isLoading && <h1>Loading ...</h1>}
 				{/* // ! Render Products */}
-				{state.products.map((product, i) => (
+				{visibleProducts.map((product, i) => (
 					<ProductCard key={i} product={product} />
 				))}
 			</div>
