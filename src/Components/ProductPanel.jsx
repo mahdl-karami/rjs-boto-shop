@@ -1,4 +1,3 @@
-// ! Import Hooks
 import { useDispatch, useSelector } from "react-redux";
 // ! Import Icons
 import { FiPlus, FiMinus, FiTrash2 } from "react-icons/fi";
@@ -6,33 +5,38 @@ import { MdAddShoppingCart } from "react-icons/md";
 // ! Import Modules
 import styles from "./ProductPanel.module.css";
 // ! Import Reducer Actions
-import { ADD_ITEM, INCERASE_ITEM, DECREASE_ITEM, DELET_ITEM } from "../Features/Cart/CartSlice";
-import { useState } from "react";
+import { ADD_ITEM, DECREASE_ITEM, INCERASE_ITEM, DELET_ITEM } from "../Features/Cart/CartSlice";
 
-const ProductPanel = ({ product: { id } }) => {
-	const [count, setCount] = useState(0);
+const ProductPanel = ({ product }) => {
+	// ! Redux Things
+	const state = useSelector((state) => state.Cart);
 	const dispatch = useDispatch();
-	// const state = useSelector((state) => state.Cart);
-	// console.log(state)
+	// ! Set Product Count (0 or From Cart)
+	const count = () => {
+		if (state.products.find((p) => p.id == product.id)) {
+			return state.products.find((p) => p.id == product.id).count;
+		}
+		return 0;
+	};
 	return (
 		<div className={styles.panel}>
-			{!count ? (
-				<button onClick={() => setCount(1)}>
+			{!count() ? (
+				<button onClick={() => dispatch(ADD_ITEM(product))}>
 					<MdAddShoppingCart />
 				</button>
 			) : (
 				<>
-					{count == 1 ? (
-						<button onClick={() => setCount(0)}>
+					{count() == 1 ? (
+						<button onClick={() => dispatch(DELET_ITEM(product))}>
 							<FiTrash2 />
 						</button>
 					) : (
-						<button onClick={() => setCount((c) => c - 1)}>
+						<button onClick={() => dispatch(DECREASE_ITEM(product))}>
 							<FiMinus />
 						</button>
 					)}
-					<p>{count}</p>
-					<button onClick={() => setCount((c) => c + 1)}>
+					<p>{count()}</p>
+					<button onClick={() => dispatch(INCERASE_ITEM(product))}>
 						<FiPlus />
 					</button>
 				</>
