@@ -20,7 +20,16 @@
 	font-size: 0.8rem;
 	font-weight: bold;
 }
-.detailes button {
+.detailes {
+	border: none;
+	padding: 0.2rem 0.4rem;
+	border-radius: 3px;
+	font-size: 1.2rem;
+	cursor: pointer;
+	transition: opacity 0.3s linear;
 	background: transparent;
 	color: var(--primary);
+	&:hover {
+		opacity: 75%;
+	}
 }

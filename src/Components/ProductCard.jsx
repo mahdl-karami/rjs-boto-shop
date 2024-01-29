@@ -15,9 +15,9 @@ const ProductCard = ({ product, product: { image, title, price, id } }) => {
 			</div>
 			<h5>{ShortThis(title, 3)}</h5>
 			<p>{price} $</p>
-			<div>
-				<Link to={`/products/${id}`} className={styles.detailes}>
-					<button>
+			<div style={{ display: "flex", justifyContent: "space-between" }}>
+				<Link to={`/products/${id}`}>
+					<button className={styles.detailes}>
 						<TbListDetails />
 					</button>
 				</Link>
