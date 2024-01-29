@@ -1,7 +1,5 @@
 // ! Import Modules
-import { useState } from "react";
 import styles from "./SearchBar.module.css";
-import { FaSearch } from "react-icons/fa";
 
 const SearchBar = ({ search, setSearch, children }) => {
 	return (

@@ -1,6 +1,7 @@
 // ! Import Hooks
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 // ! Import Components And Pages
 import SearchBar from "../Components/SearchBar";
 import ProductCard from "../Components/ProductCard";
@@ -9,7 +10,10 @@ import CategoryFilter from "../Components/CategoryFilter";
 import { FETCH_PRODUCTS } from "../Features/Products/ProductsSlice";
 // ! Import Modules
 import styles from "./Products.module.css";
+// ! Import Helpers (Extra Functions)
 import { filterProducts } from "../Helpers/FilterProducts";
+import { checkQueries } from "../Helpers/CheckQueries";
+import { getSearchParams } from "../Helpers/GetSearchParams";
 
 const Products = () => {
 	// ! Redux Things
@@ -19,6 +23,7 @@ const Products = () => {
 	const [search, setSearch] = useState("");
 	const [category, setCategory] = useState("all");
 	const [visibleProducts, setVisibleProducts] = useState(state.products);
+	const [searchParams, setSearchParams] = useSearchParams();
 	// ! Fetch Data By Axios > Storea (Side Effect)
 	useEffect(() => {
 		if (!state.products.length) {
@@ -27,8 +32,11 @@ const Products = () => {
 	}, []);
 	// ! Filter Products When Category Changed :
 	useEffect(() => {
-		setVisibleProducts(filterProducts(state, search, category));
-	}, [category , state.products , search]);
+		// ! Send Queries
+		setSearchParams(checkQueries(search, category));
+		// ! Recive Queries > filterProducts( *search* , *category* )
+		setVisibleProducts(filterProducts(state, getSearchParams(searchParams, "search"), getSearchParams(searchParams, "category")));
+	}, [category, state.products, search, searchParams]);
 	return (
 		<div>
 			<SearchBar search={search} setSearch={setSearch}>
