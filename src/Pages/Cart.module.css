@@ -1,0 +1,32 @@
+.cart {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.products {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+}
+.productItem {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: dashed #ccc 1px;
+	border-radius: 10px;
+	margin-bottom: 0.8rem;
+	padding: 0.6rem 1rem;
+	background: var(--mainWhite);
+}
+.products div img {
+	width: 70px;
+	height: 80px;
+}
+
+ /* ! Responsive Cart */
+ @media only screen and (max-width: 800px) {
+	.products {
+		width: 100%;
+	}
+}
