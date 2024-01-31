@@ -10,7 +10,7 @@ const ProductDetails = () => {
 	const product = state.products.find((p) => p.id == pathId);
 	return (
 		<div className={styles.details}>
-			<div>
+			<div className={styles.left}>
 				<img src={product.image} alt={ShortThis(product.title)} />
 				<ProductPanel product={product} />
 			</div>
